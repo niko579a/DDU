@@ -27,13 +27,13 @@ void setup(){
   textAlign(CENTER);
   size(700,700);
   
-  LoginUserNameInputFelt = new Input(width/2, height/3 - 25, "Brugernavn");
-  LoginPasswordInputFelt = new Input(width/2, height/3 + 25, "Adgangskode");
+  LoginUserNameInputFelt = new Input(width/2, height/3 - 50, "Brugernavn");
+  LoginPasswordInputFelt = new Input(width/2, height/3 + 50, "Adgangskode");
   
-  OpretUserNameInputFelt = new Input(width/2, height/2 - 25, "Brugernavn");
-  OpretPasswordInputFelt = new Input(width/2, height/2 + 25, "Adgangskode");
+  OpretUserNameInputFelt = new Input(width/2, height/3 - 50, "Brugernavn");
+  OpretPasswordInputFelt = new Input(width/2, height/3 + 50, "Adgangskode");
   
-  loginKnap = new Button(width/2, height/3*2-125, "Login");
+  loginKnap = new Button(width/2, height/3*2-110, "Login");
   loginOpretKnap = new Button(width/2, height/3*2-50, "Opret en bruger");
   
   opretKnap = new Button(width/2, height/3*2-125, "Opret");
@@ -141,7 +141,7 @@ void mousePressed(){
             brugernavn = "";
             brugernavn = database.getString("Username");
             String password = database.getString("Password");
-            if(password == hash(LoginPasswordInputFelt.inputText)){
+            if(password.equals(hash(LoginPasswordInputFelt.inputText))){
               LoginUserNameInputFelt.inputText = "";
               LoginPasswordInputFelt.inputText = "";
           
